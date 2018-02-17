@@ -16,7 +16,11 @@ end
 
 
 def select_value_and_count_of_most_prolific_species
-  "Write your SQL query here"
+  "SELECT characters.species, COUNT(*)
+  FROM characters
+  GROUP BY species
+  ORDER BY COUNT(*) DESC
+  LIMIT 1;"
 end
 
 def select_name_and_series_subgenres_of_authors
@@ -30,3 +34,12 @@ end
 def select_character_names_and_number_of_books_they_are_in
   "Write your SQL query here"
 end
+
+=begin
+
+  SQLite Count(*) Function
+  In SQLite the Count(*) function will return total number of rows available in a table, including the rows which contains NULL values. The Count(*) will not take any parameters other than asterisk symbol (*).
+
+  source: http://tutlane.com/tutorial/sqlite/sqlite-count-function
+  
+=end
